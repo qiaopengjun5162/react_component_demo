@@ -1,0 +1,38 @@
+/* 设置item的样式 */
+.item {
+    /* 开启弹性盒 */
+    display: flex;
+    /* 设置item内部元素之间的间距 */
+    gap: 10px;
+    /* 设置item内部元素的垂直对齐方式 */
+    align-items: center;
+    /* 设置item内部元素的文本对齐方式 */
+    text-align: left;
+    /* 设置item内部元素的边距 */
+    padding: 10px;
+    /* 设置item内部元素的背景颜色 */
+    background-color: #FCBF49;
+    /* 设置item内部元素的边框 */
+    border-bottom: 1px solid #CCC;
+    /* border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin: 16px 0;
+}
+
+/* 设置日志内容的样式 */
+.content {
+    flex: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 设置描述内容 */
+.desc {
+    font-size: 14px;
+    color: #194B49;
+}
+
+/* 设置学习时间 */
+.time {
+    color: #D62828;
+}
