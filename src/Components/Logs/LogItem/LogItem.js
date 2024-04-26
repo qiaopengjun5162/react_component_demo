@@ -3,18 +3,18 @@ import Card from '../../UI/Card/Card';
 import './LogItem.css';
 import MyDate from './MyDate/MyDate';
 
-const LogItem = () => {
+const LogItem = (props) => {
     return (
         <Card className="item">
-            <MyDate />
+            <MyDate date={props.date} />
 
             {/* 日志内容的容器 */}
             <div className="content">
                 <h2 className="desc">
-                    学习 React
+                    {props.desc}
                 </h2>
                 <div className="time">
-                    40分钟
+                    {props.time}分钟
                 </div>
             </div>
         </Card>
