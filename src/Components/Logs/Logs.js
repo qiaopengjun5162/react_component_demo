@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Card from "../UI/Card/Card";
+import LogFilter from "./LogFilter/LogFilter";
 import LogItem from "./LogItem/LogItem";
 import "./Logs.css";
 
@@ -18,12 +21,25 @@ const Logs = (props) => {
     //     { id: "003", date: new Date(2024, 1, 9, 13, 0, 0), desc: "学习React Router", time: 120 },
     // ];
 
+    // 创建一个存储年份的state
+    const [filterYear, setFilterYear] = useState(2024);
+
+    // 过滤数据 只显示某一年的数据
+    let filterDate = props.logsData.filter((item) => item.date.getFullYear() === filterYear);
+
+    // 创建一个修改年份的函数
+    const changeFilterYear = (year) => {
+        setFilterYear(year);
+    }
+
     // 将数据放入JSX中
-    let logItemData = props.logsData.map((item, index) => (
+    // let logItemData = props.logsData.map((item, index) => (
+    let logItemData = filterDate.map((item, index) => (
         <LogItem
             // logIndex={index}
             // onDelLog={props.onDelLog}
-            onDelLog={() => props.onDelLog(index)}
+            // onDelLog={() => props.onDelLog(index)}
+            onDelLog={() => props.onDelLog(item.id)}
             key={item.id}
             date={item.date}
             desc={item.desc}
@@ -45,7 +61,11 @@ const Logs = (props) => {
 
         // <div className="logs">{logItemData.length !== 0 ? logItemData : <p className="no-logs">暂无日志！</p>}</div>
 
-        <div className="logs">{logItemData}</div>
+        <Card className="logs">
+            {/* 引入年份的选择组件 */}
+            <LogFilter year={filterYear} onYearChange={changeFilterYear} />
+            {logItemData}
+        </Card>
     );
 };
 
