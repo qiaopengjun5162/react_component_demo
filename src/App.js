@@ -53,7 +53,11 @@ const App = () => {
     // }
     // 组件逻辑
     return <div className="app">
+        <h1>日志记录器</h1>
+        {/* 调用LogsForm组件，并将saveLogHandler作为onSaveLog属性传递给它 */}
         <LogsForm onSaveLog={saveLogHandler} />
+
+        {/* 调用Logs组件，并将logsData作为logsData属性传递给它，并将deleteLogHandler作为onDelLog属性传递给它 */}
         <Logs logsData={logsData} onDelLog={delLogByIndex} />
     </div>
 }
