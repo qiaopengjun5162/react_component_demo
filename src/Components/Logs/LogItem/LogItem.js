@@ -38,6 +38,23 @@ const LogItem = (props) => {
         props.onDelLog();
     }
 
+    /*
+        portal
+            - 组件默认会作为父组件的后代渲染到页面中
+                但是有些情况下，这种方式会带来一些问题
+            - 通过portal技术，可以将组件渲染到指定的DOM节点中（页面的指定位置中）
+            - 使用方法：
+                1. 在index.html 中添加一个新的元素
+                2. 修改组件的渲染方式
+                    - 通过ReactDOM.createPortal() 作为返回值创建元素
+                    - 参数：
+                        - 第一个参数：要渲染的组件 JSX（修改前return后的代码）
+                        - 第二个参数：要渲染到页面的指定位置中的DOM元素 目标位置（DOM元素）
+
+                    - 返回值：
+                        - 返回一个JSX元素
+                        - 该元素是ReactDOM.createPortal() 返回的元素
+    */
 
     return (
         <Card className="item">

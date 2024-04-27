@@ -1,15 +1,19 @@
-import React from 'react'
+import React from "react";
+import ReactDOM from "react-dom";
 
-import './BackDrop.css'
+import "./Backdrop.css";
 
-function BackDrop(props) {
-    return (
-        <div className="BackDrop">
-            {props.children}
-        </div>
-    )
+// 获取backdrop的根元素
+const backdropRoot = document.getElementById("backdrop-root");
+
+function Backdrop(props) {
+    // return (<div className="backdrop">{props.children}</div>)
+    return ReactDOM.createPortal(
+        <div className="backdrop">{props.children}</div>,
+        backdropRoot
+    );
 }
 
-BackDrop.propTypes = {}
+Backdrop.propTypes = {};
 
-export default BackDrop
+export default Backdrop;

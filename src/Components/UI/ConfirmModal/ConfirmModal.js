@@ -1,12 +1,12 @@
 import React from 'react'
-import BackDrop from '../BackDrop/BackDrop'
+import Backdrop from '../Backdrop/Backdrop'
 import Card from '../Card/Card'
 import './ConfirmModal.css'
 
 
 const ConfirmModal = props => {
     return (
-        <BackDrop>
+        <Backdrop>
             <Card className="confirm-modal">
                 <div className="confirm-modal-text">
                     {/* <p>该操作不可恢复，确认删除吗？</p> */}
@@ -18,7 +18,7 @@ const ConfirmModal = props => {
 
                 </div>
             </Card>
-        </BackDrop>
+        </Backdrop>
     )
 }
 
