@@ -7,3 +7,17 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     background-color: #EAE2B7;
 }
+
+.no-logs {
+    /* 没有日志时的样式 */
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
