@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Card from '../UI/Card/Card';
 import './LogsForm.css';
 
-const LogsForm = () => {
+const LogsForm = (props) => {
+    console.log(props.onSaveLog);
     /*
         当表单项发生变化时，获取用户输入的数据
     
@@ -98,7 +99,7 @@ const LogsForm = () => {
         // 打印表单中的数据
         // console.log(inputDate, inputDesc, inputTime);
         // 将数据拼装为一个对象
-        const logData = {
+        const newLog = {
             date: new Date(inputDate),
             desc: inputDesc,
             time: +inputTime
@@ -120,6 +121,9 @@ const LogsForm = () => {
                 反之，state发生变化，表单项也会跟着改变，这种操作我们就称为双向绑定
                 这样一来，表单就成为了一个受控组件
         */
+        
+        // 当要添加新的日志时，调用父组件传递过来的函数
+        props.onSaveLog(newLog);
 
         // 清空表单中的旧数据
         setInputDate('');
@@ -132,7 +136,7 @@ const LogsForm = () => {
         //     inputDesc: '',
         //     inputTime: ''
         // })
-        console.log(logData);
+        // console.log(logData);
 
 
     }
